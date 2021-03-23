@@ -40,7 +40,7 @@ $users | % {
             Send-MailMessage `
                 -SmtpServer "domain-org.mail.protection.outlook.com" `
                 -From "helpdesk@domain.org" `
-                -to "rissa@domain.org" `
+                -to $_.userprincipalname `
                 -ReplyTo "helpdesk@domain.org" `
                 -subject "**URGENT** - Your Password has expired!" `
                 -Attachments "C:\scripts\pwreset.docx" `
@@ -54,7 +54,7 @@ $users | % {
             Send-MailMessage `
                 -SmtpServer "domain-org.mail.protection.outlook.com" `
                 -From "helpdesk@domain.org" `
-                -to "rissa@domain.org" `
+                -to $_.userprincipalname `
                 -ReplyTo "helpdesk@domain.org" `
                 -subject "**URGENT** - Your Password is Expiring in $daysleft Days!" `
                 -Attachments "C:\scripts\pwreset.docx" `
